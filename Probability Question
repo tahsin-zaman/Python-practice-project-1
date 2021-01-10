@@ -1,0 +1,49 @@
+def fillBag(**balls):
+
+    global bag
+
+    for differentColours in balls:
+        print(differentColours, ' : ', balls[differentColours])
+    bag = balls
+
+fillBag(red = 12, blue = 20, green = 14, grey = 10)
+    # pass
+
+print('\n')
+
+
+def totalBalls():
+
+    global sumOfBalls
+
+    sumOfBalls = (sum(bag.values()))
+    print(sumOfBalls)
+    # return sumOfBalls
+
+
+totalBalls()
+    # pass
+
+print('\n')
+
+def probOf(color):
+
+    global probability
+
+    probability = bag[color] / sumOfBalls * 100
+    print('probability of', color, 'is:   ', probability)
+    return probability
+
+probOf('red')
+    # pass
+
+print('\n')
+
+
+def probAll():
+
+    for color in bag:
+        bag[color] = probOf(color)
+    # print(color, '\t', probability)
+
+probAll()
